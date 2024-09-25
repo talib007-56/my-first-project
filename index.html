@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+    <div class="background-animation"></div>
+    <div class="main-container">
+        <div class="image-container">
+            <img src="BMI.PNG" alt="BMI Image">
+        </div>
+        <div class="container">
+            <h1>BMI Calculator</h1>
+            <div class="progress-container">
+                <div class="progress-bar" id="weight-bar"></div>
+            </div>
+            <div class="calculator">
+                <label for="weight">Weight (kg): <span id="weight-value">70</span> kg</label>
+                <input type="range" id="weight" class="slider" min="30" max="200" value="70">
+                <label for="height">Height (cm): <span id="height-value">170</span> cm</label>
+                <input type="range" id="height" class="slider" min="100" max="220" value="170">
+                <button onclick="calculateBMI()">Calculate</button>
+                <div id="result"></div>
+            </div>
+        </div>
+    </div>
+    <div class="bmi-gauge-container">
+        <canvas id="bmi-gauge"></canvas>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

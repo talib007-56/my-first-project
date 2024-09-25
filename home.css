@@ -1,0 +1,465 @@
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(to right, #ffffff, #2575fc);
+    color: #000000;
+    overflow-x: hidden;
+}
+
+header {
+    position: fixed;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.95);
+    z-index: 1000;
+    padding: 10px 0;
+    background: rgba(255, 255, 255, 0.9);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 20px;
+}
+
+.logo {
+    width: 120px;
+    transition: transform 0.3s;
+    animation: fadeIn 2s ease-in;
+}
+
+.logo:hover {
+    transform: scale(1.1);
+}
+
+.curved-menu-box {
+    background: #fff;
+    border-radius: 20px;
+    padding: 10px 20px;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex-grow: 0;
+}
+
+.nav-links {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-links li {
+    position: relative;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+
+.nav-links a::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #2575fc;
+    transition: width 0.3s ease;
+}
+
+.nav-links a:hover::after {
+    width: 100%;
+}
+
+.nav-links a:hover {
+    color: #2575fc;
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.dropdown {
+    position: relative;
+    display: inline-block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9;
+    min-width: 160px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+}
+
+.dropdown-content a {
+    color: #333;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+}
+
+.dropdown-content a:hover {
+    background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.cta-buttons {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+}
+
+.cta-buttons button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 1em;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.cta-buttons .sign-up {
+    background-color: #6a11cb;
+    color: #fff;
+}
+
+.cta-buttons .login {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #333;
+}
+
+.cta-buttons button:hover {
+    transform: scale(1.05);
+}
+
+.cta-buttons .sign-up:hover {
+    background-color: #2575fc;
+}
+
+.cta-buttons .login:hover {
+    background-color: #2575fc;
+    color: #fff;
+}
+
+
+.search-bar {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.search-bar input {
+    padding: 5px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.search-bar button {
+    padding: 5px 10px;
+    border: none;
+    background-color: #2575fc;
+    color: #fff;
+    border-radius: 5px;
+    cursor: pointer;
+}
+/* Add this to home.css */
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.fade-in {
+    animation: fadeIn 2s ease-in-out;
+}
+
+
+.homepage-container {
+    display: flex;
+    height: 100vh;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+    padding-top: 80px; /* Adjust for fixed navbar */
+}
+
+.image-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.image-section img {
+    max-width: 100%;
+    height: auto;
+}
+
+.content-section {
+    flex: 1.5;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    text-align: center;
+}
+
+.hero-section {
+    animation: fadeIn 2s ease-in;
+}
+
+.hero-section h1 {
+    font-size: 3em;
+    margin-bottom: 20px;
+}
+
+.hero-section p {
+    font-size: 1.2em;
+    margin-bottom: 40px;
+}
+
+button {
+    padding: 15px 30px;
+    font-size: 1.1em;
+    color: #fff;
+    background-color: #6a11cb;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+button:hover {
+    background-color: #2575fc;
+    transform: scale(1.05);
+}
+
+.curved-line {
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    margin-bottom: -20px; /* Adjust as needed to overlap or align correctly */
+}
+
+.curved-line img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+.curved-line img {
+    animation: slideIn 1s ease-in-out;
+}
+
+@keyframes slideIn {
+    from {
+        transform: translateY(20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+
+#features, #testimonials, #contact {
+    padding: 40px 20px;
+    text-align: center;
+}
+
+#features h2, #testimonials h2, #contact h2 {
+    font-size: 2.5em;
+    margin-bottom: 20px;
+}
+
+.features-container, .testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.feature, .testimonial {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 40px);
+    margin: 10px;
+}
+
+.feature h3, .testimonial p {
+    margin: 0;
+}
+
+.testimonials-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.testimonial {
+    background: #fff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    flex: 1 1 calc(33% - 40px); /* Two items per row */
+    margin: 10px;
+    text-align: center;
+    position: relative;
+}
+
+.testimonial-img {
+    width: 80px; /* Adjust size as needed */
+    height: 80px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+}
+
+.testimonial p {
+    margin: 0;
+    font-size: 1em;
+}
+
+.testimonial p:last-child {
+    margin-top: 5px;
+    font-style: italic;
+}
+
+
+footer {
+    background: #f4f4f4;
+    padding: 40px 20px;
+    color: #333;
+    position: relative;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    margin-bottom: 20px;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    background: linear-gradient(to right, #ffffff, #f0f0f0);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border: 1px solid #ddd;
+}
+
+.footer-section + .footer-section {
+    margin-left: 20px;
+}
+
+.footer-section h2 {
+    margin-top: 0;
+    font-size: 1.8em;
+    border-bottom: 2px solid #2575fc;
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+}
+
+.footer-links {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 1.1em;
+}
+
+.footer-links a:hover {
+    color: #2575fc;
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.social-links img {
+    width: 30px;
+    height: auto;
+}
+
+.newsletter {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.newsletter input {
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    width: 100%;
+    max-width: 300px;
+}
+
+.newsletter button {
+    padding: 10px 20px;
+    background-color: #6a11cb;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.3s;
+}
+
+.newsletter button:hover {
+    background-color: #2575fc;
+    transform: scale(1.05);
+}
+/* Example for button hover effect */
+button {
+    transition: all 0.3s ease;
+}
+
+button:hover {
+    background-color: #2575fc;
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+h1 {
+    font-size: 2.5em;
+ 
+}
+
+p {
+    font-size: 1em;
+    
+}
+
+
